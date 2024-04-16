@@ -1,0 +1,19 @@
+spring:
+  application:
+    name: ApiGateway
+
+  cloud:
+    gateway:
+      mvc:
+        routes:
+          - id: User
+            uri: lb://USER
+            predicates:
+              - Path=/User/**
+          - id: PostService
+            uri: lb://POSTSERVICE
+            predicates:
+              - Path=/Post/**
+server:
+  port: 9000
+
