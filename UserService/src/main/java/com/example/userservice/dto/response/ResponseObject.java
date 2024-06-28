@@ -1,4 +1,4 @@
-package com.example.userservice.models;
+package com.example.userservice.dto.response;
 
 public class ResponseObject {
     private String status;

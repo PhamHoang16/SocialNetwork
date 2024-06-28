@@ -13,8 +13,12 @@ import java.util.List;
 @RestController
 @RequestMapping("/Post")
 public class PostController {
-    @Autowired
+
     private PostRepository repository;
+    public PostController(PostRepository postRepository) {
+        this.repository = postRepository;
+
+    }
 
     @GetMapping("")
     List<Post> getAllPost() {
@@ -27,5 +31,6 @@ public class PostController {
                 new ResponseObject("success", "your post has been posted", repository.save(newPost))
         );
     }
+
 
 }
